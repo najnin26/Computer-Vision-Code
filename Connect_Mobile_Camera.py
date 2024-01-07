@@ -20,6 +20,7 @@ while(cap.isOpened()):
         gray  = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
         cv2.imshow("Gray Frame",gray)
         cv2.imshow('Colorframe',frame)
+        output.write(frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):   #press to exit
             break
     
