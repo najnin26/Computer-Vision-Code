@@ -10,8 +10,6 @@ def rescaleFrame(frame,scale=0.75):
 #For the image
 
 img=cv.imread('F:\\CV\\Code\\Data\\avengers.jpg')
-h,w,c = img.shape
-print("Original Height and Width:", h,"x", w)
 resized_img=rescaleFrame(img,scale=0.4)
 cv.imshow("Resized image ", resized_img)
 

@@ -22,8 +22,8 @@ print("Original image==\n",img3)
 
 #Image conversion project colored image into grayscale.
 path=input("Enter the image path= ")
-img4=cv2.imread(path,0)
-img4=cv2.resize(img4, (560,700))
+img4=cv2.imread(path,1)
+img4=cv2.resize(img4, (300,300))
 img4 = cv2.flip(img4,-1)
 cv2.imshow("Converted image", img4)
 k=cv2.waitKey(0)
