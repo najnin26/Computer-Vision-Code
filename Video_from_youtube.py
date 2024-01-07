@@ -10,11 +10,6 @@ cap = cv2.VideoCapture(0)   #Here parameter 0 is a path of any video use for web
 
 cap.open(data.url)
 print("check===",cap.isOpened())
-#it is 4 byte code which is use to specify the video codec
-fourcc = cv2.VideoWriter_fourcc(*"MJPG")  # *"XVID"
-#It contain 4 parameter , name, codec,fps,resolution
-output = cv2.VideoWriter("F:\CV\Code\Data\output.mp4",fourcc,20.0,(640,480))
-
 while(cap.isOpened()):
     ret, frame = cap.read()   #here read the frame
     if ret == True:
@@ -28,7 +23,6 @@ while(cap.isOpened()):
  
 # Release everything if job is finished
 cap.release()
-output.release()
 cv2.destroyAllWindows()
 
 
