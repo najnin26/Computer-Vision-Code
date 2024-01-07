@@ -1,4 +1,4 @@
-#Capture Video from youtube
+#Capture Video from Youtube
 import pafy
 import cv2
 url="https://www.youtube.com/watch?v=wIAs97ynODo&list=PLaHodugB5x-Ddy_H951h0VHjOjfzZNCBh&index=7&t=6s"
