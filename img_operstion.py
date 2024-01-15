@@ -18,7 +18,7 @@ cv2.imshow("red",r)
 cv2.imshow('original',img)
 #merge all channel
 mr1=cv2.merge((r,g,b))
-cv2.imshow('Merge', mr1)
+cv2.imshow('rgb', mr1)
 mr2 = cv2.merge((g,b,r))
 cv2.imshow("gbr",mr2)
 cv2.waitKey(0)
