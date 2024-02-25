@@ -35,7 +35,15 @@ for i in range(4):
     plt.subplot(2, 2, i+1), plt.imshow(images[i], 'gray')
     plt.title(titles[i])
     plt.xticks([]),plt.yticks([])
-    
+
 plt.show()
+    
+x1=cv2.morphologyEx(mask, cv2.MORPH_TOPHAT, kernel)
+x2=cv2.morphologyEx(mask, cv2.MORPH_GRADIENT, kernel)
+x3=cv2.morphologyEx(mask, cv2.MORPH_BLACKHAT, kernel)
+
+cv2.imshow("x1",x1) 
+cv2.imshow("x2",x2) 
+cv2.imshow("x3",x3) 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
