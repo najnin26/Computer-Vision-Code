@@ -19,7 +19,7 @@ img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 #parameter(img,data_type for -ve val,ksize)
 #kernal size must be odd
 lap=cv2.Laplacian(img_gray,cv2.CV_64F,ksize=3)
-lap=np.int8(np.absolute(lap))
+lap=np.uint8(np.absolute(lap))
 
 cv2.imshow("original==",img)
 cv2.imshow("gray====",img_gray)
