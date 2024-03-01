@@ -32,6 +32,6 @@ for i in range(9):
     plt.subplot(3, 3, i+1), plt.imshow(images[i], 'gray')
     plt.title(titles[i])
     plt.xticks([]),plt.yticks([])
-    
+plt.show()    
 cv2.waitKey(0)
 cv2.destroyAllWindows()
