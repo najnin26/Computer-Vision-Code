@@ -11,7 +11,7 @@ import cv2
 import numpy as np
 
 #load image into gray scale
-img = cv2.imread("F:\\CV\\Code\\Data\\avengers.jpg")
+img = cv2.imread("F:\\CV\\Code\\Data\\building.jpg")
 img = cv2.resize(img,(400,300))
 img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
@@ -21,12 +21,40 @@ img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 lap=cv2.Laplacian(img_gray,cv2.CV_64F,ksize=3)
 lap=np.uint8(np.absolute(lap))
 
+#Sobel operation - 
+# is a joint Gausssian smoothing plus differentiation operation, 
+#so it is more  resistant to noise
+#This is use for x and y bth
+#parameter (img,type for -ve val,x = 1,y = 0,ksize)
+#Sobel X focus on vertical lines
+#Sobel y focus on horizontal lines
+
+sobelX=cv2.Sobel(img_gray,cv2.CV_64F,1,0,ksize=3)
+sobelY=cv2.Sobel(img_gray,cv2.CV_64F,0,1,ksize=3)
+
+sobelX=np.uint8(np.absolute(sobelX))
+sobelY=np.uint8(np.absolute(sobelY))
+
+com=np.bitwise_or(sobelX,sobelY)
+
 cv2.imshow("original==",img)
 cv2.imshow("gray====",img_gray)
 cv2.imshow("Laplacian==",lap)
-#cv2.imshow("SobelX===",sobelX)
-#cv2.imshow("SobelY==",sobelY)
-#cv2.imshow("COmbined image==",sobelcombine)
+cv2.imshow("SobelX===",sobelX)
+cv2.imshow("SobelY==",sobelY)
+cv2.imshow("COmbined image==",com)
 
+titles = ["original","gray","laplacian","sobelX","sobelY","combined"]
+images = [img,img_gray,lap,sobelX,sobelY,com]
+
+#if you want then plot it
+from matplotlib import pyplot as plt
+for i in range(6):
+    plt.subplot(3,2, i+1), 
+    plt.imshow(images[i], 'gray')
+    plt.title(titles[i])
+    plt.xticks([]),plt.yticks([])
+
+plt.show()
 cv2.waitKey(0)
 cv2.destroyAllWindows()
