@@ -43,5 +43,10 @@ while True:
     filter=cv2.bitwise_and(frame, frame,mask=mask)
     
     
+    mask1=cv2.bitwise_not(mask)
+    m_g=cv2.getTrackbarPos("Thresh", "Color Adjustments")
+    ret,thresh=cv2.threshold(mask1, m_g, 255, cv1.THRESH_BINARY)
+    
+    
     
     
