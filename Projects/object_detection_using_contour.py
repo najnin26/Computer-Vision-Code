@@ -37,6 +37,10 @@ while True:
     lower_bound=np.array([l_h,l_s,l_v])
     upper_bound=np.array([u_h,u_s,u_v])
     
+    #creating mask
+    mask=cv2.inRange(hsv, lower_bound, upper_bound)
+    #filter mask with image
+    filter=cv2.bitwise_and(frame, frame,mask=mask)
     
     
     
