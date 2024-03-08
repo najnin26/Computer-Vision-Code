@@ -38,6 +38,11 @@ plt.hist(r.ravel(), 256,[0,256])
 plt.title("Colorful image")
 plt.show()
 
+#cal
+hist = cv2.calcHist([img], [0], None, [256], [0, 256])
+plt.title("ColorFull Image")
+plt.plot(hist)
+plt.show()
 
 #gray scale
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
