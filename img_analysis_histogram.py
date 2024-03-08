@@ -9,6 +9,7 @@ import numpy as np
 import cv2 
 from matplotlib import pyplot as plt
 
+#plotting with calhist method
 """
 img=np.zeros((200,200),np.uint8)
 
@@ -31,8 +32,18 @@ cv2.imshow("b",b)
 cv2.imshow("g",g)
 cv2.imshow("r",r)
 
-hist=cv2.calcHist([img], [0], None, [256], [0,256])
+plt.hist(b.ravel(), 256,[0,256])
+plt.hist(g.ravel(), 256,[0,256])
+plt.hist(r.ravel(), 256,[0,256])
+plt.title("Colorful image")
+plt.show()
+
+
+#gray scale
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+hist=cv2.calcHist(gray, [0], None, [256], [0,256])
 plt.plot(hist)
+plt.title("Gray Image")
 plt.show()
 
 cv2.waitKey(0)
