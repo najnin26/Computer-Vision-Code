@@ -46,5 +46,17 @@ plt.plot(hist)
 plt.title("Gray Image")
 plt.show()
 
+
+#Histogram equalization is good when  of the image is confined to a particular region.
+#It accept gray scale image
+
+equ=cv2.equalizeHist(gray)
+res=np.hstack((gray,equ))
+cv2.imshow('equ', res)
+hist1=cv2.calcHist([equ], [0], None, [256], [0,256])
+plt.plot(hist1)
+plt.title("Equalization")
+plt.show()
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
