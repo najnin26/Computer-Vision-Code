@@ -23,15 +23,17 @@ cv2.imshow("res", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 """
-
-img=cv2.imread("F:\CV\Code\Data\thor.jpg")
-img=cv2.resize(img, (500,500))
-
+img=cv2.imread("F:\\CV\\Code\\Data\\thor.jpg")
+img=cv2.resize(img, (500,650))
+b,g,r=cv2.split(img)
+cv2.imshow("img", img)
+cv2.imshow("b",b)
+cv2.imshow("g",g)
+cv2.imshow("r",r)
 
 hist=cv2.calcHist([img], [0], None, [256], [0,256])
 plt.plot(hist)
 plt.show()
 
-cv2.imshow("res", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
