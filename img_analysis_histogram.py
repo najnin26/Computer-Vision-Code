@@ -63,5 +63,18 @@ plt.plot(hist1)
 plt.title("Equalization")
 plt.show()
 
+#CLAHE (Contrast Limited Adaptive Histogram Equalization)
+# create a CLAHE object (Arguments are optional).
+#It is used to enchance image and also handle noise froom image region
+#gray scale imge is required
+
+clahe=cv2.createCLAHE(clipLimit=2.0,tileGridSize=(8,8))
+cl1=clahe.apply(gray)
+cv2.imshow("clahe",cl1)
+hist2=cv2.calcHist([cl1], [0], None, [256], [0,256])
+plt.plot(hist2)
+plt.title("CLAHE")
+plt.show()
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
