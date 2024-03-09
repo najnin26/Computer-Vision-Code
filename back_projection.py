@@ -10,8 +10,8 @@ hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
 roi=cv2.imread("F:\CV\Code\Data\g.jpg")
 roi_hsv=cv2.cvtColor(roi,cv2.COLOR_BGR2HSV)
 
-roi_hist=cv2.calcHist([roi_hsv], [0,1], None, [180,256], [0,180,0,256])
-mask=cv2.calcBackProject([hsv], [0,1], roi_hist, [0,180,0,256], 1)
+roi_hist=cv2.calcHist([roi_hsv], [0,1], None, [200,256], [0,200,0,256])
+mask=cv2.calcBackProject([hsv], [0,1], roi_hist, [0,200,0,256], 1)
 
 kernel=cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5))
 mask=cv2.filter2D(mask,-1,kernel)
