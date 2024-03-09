@@ -22,7 +22,9 @@ mask=cv2.merge((mask,mask,mask))
 result=cv2.bitwise_or(img, mask)
 
 cv2.imshow("Original image",img)
+cv2.imshow("Roi", hsv)
 cv2.imshow("Mask", mask)
+cv2.imshow("Result", result)
 
 
 cv2.waitKey(0)
