@@ -31,7 +31,16 @@ while  True:
     ret, frame = cap.read()
     
     if ret == True:
-        cv.imshow('Original== ', frame)
+        hsv=cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+        dst=cv.calcBackProject([hsv], [0], roi_hist,[0,180], 180)
+        ret,track=cv.meanShift(dst, track, termntn)
+        x,y,w,h=track
+        final=cv.rectangle(frame, (x,y), (x+w,y+h),(0,0,255),3)
+        
+        #cv.imshow('Original== ', frame)
+        frame=cv.resize(final, (600,600))
+        cv.imshow('final', frame)
+        
         k = cv.waitKey(30) & 0xff
         if k == 27:
             break
