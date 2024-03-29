@@ -25,10 +25,13 @@ while  True:
         hsv=cv.cvtColor(frame, cv.COLOR_BGR2HSV)
         dst=cv.calcBackProject([hsv], [0], roi_hist,[0,180], 180)
         ret,track=cv.CamShift(dst, track, termntn)
-        x,y,w,h=track
-        final=cv.rectangle(frame, (x,y), (x+w,y+h),(0,0,255),3)
-        
+        # x,y,w,h=track
+        # final=cv.rectangle(frame, (x,y), (x+w,y+h),(0,0,255),3)
+        # cv.imshow('dst', dst)
         #cv.imshow('Original== ', frame)
+        pts=cv.boxPoints(ret)
+        pts=np.int64(pts)
+        final=cv.polylines(frame, [pts], True, (255,0,0),2)
         frame=cv.resize(final, (600,600))
         cv.imshow('final', frame)
         
