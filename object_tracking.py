@@ -37,6 +37,7 @@ while  True:
         x,y,w,h=track
         final=cv.rectangle(frame, (x,y), (x+w,y+h),(0,0,255),3)
         
+        cv.imshow('dst', dst)
         #cv.imshow('Original== ', frame)
         frame=cv.resize(final, (600,600))
         cv.imshow('final', frame)
