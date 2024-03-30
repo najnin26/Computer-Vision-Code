@@ -20,17 +20,28 @@ feature_params=dict(maxCorners=100,
                     blockSize=7
                     )
 # Parameters for lucas kanade optical flow
-lk_params=dict(winSize=(15,15),
-         maxLabel=2,
-         criteria=(cv.TERM_CRITERIA_EPS|cv.TERM_CRITERIA_COUNT,10,0.03)
-         )
+lk_params = dict( winSize  = (15,15),
+                  maxLevel = 2,
+                  criteria = (cv.TERM_CRITERIA_EPS | cv.TERM_CRITERIA_COUNT, 10, 0.03))
 color=np.random.randint(0,255,(100,3))
+
+ret,old_frame=cap.read()
+old_gray=cv.cvtColor(old_frame,cv.COLOR_BGR2GRAY)
+p0=cv.goodFeaturesToTrack(old_gray, mask=None, **feature_params)
+
+mask=np.zeros_like(old_frame)
 
 while  True:
     ret, frame = cap.read()
     
     if ret == True:
         frame=cv.resize(frame, (700,600))
+        frame_gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+        
+        # calculate optical flow
+        p1, st, err = cv.calcOpticalFlowPyrLK(old_gray,
+                                          frame_gray, p0, 
+                                          None, **lk_params)
         cv.imshow('Frame', frame)
         k = cv.waitKey(30) & 0xff
         if k == 27:
