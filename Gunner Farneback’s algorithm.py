@@ -34,7 +34,11 @@ while(1):
     k = cv2.waitKey(30) & 0xff
     if k == 27:
         break
-
+    elif k==ord('s'):
+        cv2.imwrite("F:\\CV\\Code\\Data\\1.png", frame2)
+        cv2.imwrite("F:\\CV\\Code\\Data\\2.png", rgb)
+    prvs = next
+        
 cap.release()
 cv2.destroyAllWindows()
 
