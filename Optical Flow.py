@@ -15,10 +15,17 @@ cap = cv.VideoCapture("F:\\CV\\Code\\Data\\test2.mp4")
 
 # params for ShiTomasi corner detection
 feature_params=dict(maxCorners=100,
-                    qualitylevel=0.3,
+                    qualityLevel=0.3,
                     minDistance=7,
-                    blocksize=7
+                    blockSize=7
                     )
+# Parameters for lucas kanade optical flow
+lk_params=dict(winSize=(15,15),
+         maxLabel=2,
+         criteria=(cv.TERM_CRITERIA_EPS|cv.TERM_CRITERIA_COUNT,10,0.03)
+         )
+color=np.random.randint(0,255,(100,3))
+
 while  True:
     ret, frame = cap.read()
     
