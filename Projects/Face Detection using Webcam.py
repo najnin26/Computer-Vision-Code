@@ -23,7 +23,7 @@ while True:
     ret,frame=cap.read()
     frame=cv2.flip(frame, 2)
     cv2.imshow('Face', dector(frame))
-    if cv2.waitKey(1)==13 :
+    if cv2.waitKey(1)==13 :      #enter
         break
     
 cap.release()
