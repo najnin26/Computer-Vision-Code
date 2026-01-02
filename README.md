@@ -56,6 +56,11 @@ Ensure you have these tools installed to run the scripts.:contentReference[oaici
    python -m venv venv
    source venv/bin/activate  # Linux/macOS
    venv\Scripts\activate     # Windows
+4. Install dependencies
+   ```bash
+   pip install -r requirements.txt
+If requirements.txt isn’t included yet, install manually:
+```bash
+pip install opencv-python numpy
 
-4. 
 
