@@ -5,3 +5,16 @@ Welcome to **Computer Vision Code**, a collection of Python scripts and notebook
 This repository is designed for learners and developers to explore classic and practical computer vision concepts — from basic image processing to more advanced video and feature detection.:contentReference[oaicite:1]{index=1}
 
 ---
+## 📂 Repository Contents
+
+The project includes implementations of popular computer vision tasks such as:
+
+- Edge detection (`Canny_edge_detection.py`)
+- Background subtraction (`Background subtraction.py`)
+- Feature detection & matching (`Corner Detection.py`, `Template_Matching.py`)
+- Geometric transformations (`Perspective_Transformation.py`)
+- Motion analysis (`Optical Flow.py`, `object_tracking.py`)
+- Video stream handling (`Connect_Mobile_Camera.py`, `Video_from_youtube.py`)
+- Image processing basics (blurring, thresholding, histogram, color spaces)
+- …and many more utility demo scripts.
+
