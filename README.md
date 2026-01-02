@@ -51,5 +51,11 @@ Ensure you have these tools installed to run the scripts.:contentReference[oaici
    ```bash
    git clone https://github.com/najnin26/Computer-Vision-Code.git
    cd Computer-Vision-Code
+2. **Create a virtual environment (optional but recommended)**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/macOS
+   venv\Scripts\activate     # Windows
 
+4. 
 
