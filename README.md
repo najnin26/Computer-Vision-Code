@@ -45,4 +45,11 @@ This codebase is written in **Python** and primarily uses:
 Ensure you have these tools installed to run the scripts.:contentReference[oaicite:3]{index=3}
 
 ---
+## 📥 Installation & Setup
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/najnin26/Computer-Vision-Code.git
+   cd Computer-Vision-Code
+
 
