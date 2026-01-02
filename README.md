@@ -34,3 +34,15 @@ This repo showcases:
 - ⚙️ **Utility examples** for learning and experimentation
 
 ---
+## 🧰 Tech Stack
+
+This codebase is written in **Python** and primarily uses:
+
+- 🔹 `OpenCV` — Computer vision and image/video processing  
+- 🔹 `NumPy` — Efficient numerical operations  
+- 🔹 `Jupyter Notebook` — For demo and interactive exploration
+
+Ensure you have these tools installed to run the scripts.:contentReference[oaicite:3]{index=3}
+
+---
+
