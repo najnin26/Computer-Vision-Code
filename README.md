@@ -18,3 +18,19 @@ The project includes implementations of popular computer vision tasks such as:
 - Image processing basics (blurring, thresholding, histogram, color spaces)
 - …and many more utility demo scripts.
 
+> Full list of files and scripts is visible in the repository. Each file is a standalone example.:contentReference[oaicite:2]{index=2}
+
+---
+
+## 🚀 Features
+
+This repo showcases:
+
+- 🧠 **Basic image processing** — grayscale, thresholding, filtering  
+- 📊 **Transformations** — resizing, perspective transforms, rotations  
+- 🕵️ **Feature detection & analysis** — contours, edges, corners  
+- 🎥 **Video and camera integration** — real-time camera feed and video file processing  
+- 🌀 **Motion & tracking** — optical flow, object tracking  
+- ⚙️ **Utility examples** for learning and experimentation
+
+---
